@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css?family=Palanquin');
+body {
+font-family: 'Palanquin', sans-serif;
+}
+.heading {
+    background-color: #D32023;
+    display: flex;
+    align-items: center;
+}
+
+h1 {
+    color: #ffffff;
+    background-color: #D32023;
+    padding:10px;
+}
+
+.logo {
+    vertical-align: middle;
+    margin: 10px;
+}
+

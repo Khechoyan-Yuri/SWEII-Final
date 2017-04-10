@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <link rel="stylesheet" th:href="@{/app.css}"/>
+    <title>Customer Queue</title>
+</head>
+<body>
+    <div class="heading">
+        <img class="logo" th:src="@{/img/queued.jpg}" alt="logo" />
+        <h1>Customer Service Queue</h1>
+    </div>
+    <div></div>
+    <div class="main">
+        <h2>Welcome to the Customer Service Queue</h2>
+        <p>To be assisted by a Customer Service Representative: Enter your First Name,
+            Last Name, and your (10) ten-digit Mobile Phone Number. (i.e. 0123456789).
+            And a Reason for your Visit today. The phone number will be used to send you
+            SMS Text Messages. When done, click the ‘Register’ Button to confirm.</p>
+
+        <form method="post" th:action="@{${action}}" th:object="${customer}">
+
+        </form>
+    </div>
+</body>
+</html>
