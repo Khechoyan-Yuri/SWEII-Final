@@ -19,3 +19,43 @@ h1 {
     margin: 10px;
 }
 
+.main {
+    max-width: 700px;
+    margin:auto;
+}
+
+.elements .row {
+    display:table-row;
+}
+
+.cell
+{
+    display:table-cell;
+}
+
+.elements
+{
+    display:table;
+}
+
+.c1 {
+    padding-right: 10px;
+}
+
+.c2 {
+    padding-right: 20px;
+}
+
+.elements select {
+    width:100%;
+}
+
+.buttons {
+    margin:auto;
+    margin-top:40px;
+    display:table;
+}
+
+.buttons .cell {
+    border: 10px solid transparent;
+}
