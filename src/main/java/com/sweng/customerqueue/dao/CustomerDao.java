@@ -1,4 +1,4 @@
-package dao;
+package com.sweng.customerqueue.dao;
 
 
 import com.sweng.customerqueue.model.Customer;
