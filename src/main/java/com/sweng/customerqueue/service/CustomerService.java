@@ -1,4 +1,4 @@
-package service;
+package com.sweng.customerqueue.service;
 
 import com.sweng.customerqueue.model.Customer;
 

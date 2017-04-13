@@ -1,8 +1,8 @@
-package service;
+package com.sweng.customerqueue.service;
 
 
 import com.sweng.customerqueue.model.Customer;
-import dao.CustomerDao;
+import com.sweng.customerqueue.dao.CustomerDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
