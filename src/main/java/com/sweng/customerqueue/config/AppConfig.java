@@ -19,6 +19,6 @@ public class AppConfig {
 
     @Bean
     public Hashids hashids() {
-        return new Hashids(env.getProperty("giflib.hash.salt"),8);
+        return new Hashids(env.getProperty("customerqueue.hash.salt"),8);
     }
 }
