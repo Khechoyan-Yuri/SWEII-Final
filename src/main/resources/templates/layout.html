@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+
+<head lang="en">
+    <meta charset="UTF-8"/>
+    <meta description="viewport" content="width=device-width, initial-scale=1"/>
+
+    <link rel="icon" th:href="@{/img/queued.jpg}" />
+    <link rel="stylesheet" th:href="@{/app.css}" />
+
+    <title th:text="'Customer Queue | ' + ${page_title}"></title>
+</head>
+
+<div th:fragment="heading" class="heading">
+    <img class="logo" th:src="@{img/queued.jpg}" alt="logo" />
+    <h1>Customer Service Queue</h1>
+</div>
+
+<body>
+
+<div th:fragment="flash" th:if="${flash != null}" class="container">
+    <i class="right material-icons" data-close="">close</i>
+    <div th:classappend="${#strings.toLowerCase(flash.status)}" th:text="${flash.message}" class="flash"></div>
+</div>
+
+
+</body>
+</html>

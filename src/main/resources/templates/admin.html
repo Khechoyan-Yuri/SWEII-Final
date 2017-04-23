@@ -2,20 +2,17 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head th:replace="layout :: head"></head>
 <body>
-<div th:replace="layout :: heading"></div>
+    <div th:replace="layout :: heading"></div>
     <div class="main">
-        <h2>Welcome to the Customer Service Queue</h2>
-        <p>To add yourself to the Customer Service Queue, click "Register" and
-            fill out the form.</p>
-
+        <h2>Customer Service Queue Administration Page</h2>
         <div class="table">
             <div class="row" th:each="customer : ${customers}">
                 <div class="cell col" th:text="${customer.firstName} + ' ' +
-                    ${customer.lastName}"></div>
+                        ${customer.lastName}"></div>
+                <div class="cell col" th:text="${customer.checkInTime}"></div>
+                <div class="cell col" th:text="${customer.checkOutTime}"></div>
             </div>
         </div>
-        <a href="/register.html">Register</a>
-        <a href="/handle.html">Handle Next Customer</a>
     </div>
 </body>
 </html>
