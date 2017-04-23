@@ -1,14 +1,26 @@
 @import url('https://fonts.googleapis.com/css?family=Palanquin');
+
 body {
-font-family: 'Palanquin', sans-serif;
+    font-family: 'Palanquin', sans-serif;
+    margin:0;
 }
+
+.table .row:nth-child(even) {
+    background-color: white;
+}
+
+.table .row:nth-child(odd) {
+    background-color: #D32023;
+    color:white;
+}
+
 .heading {
     background-color: #D32023;
     display: flex;
     align-items: center;
 }
 
-h1 {
+.heading h1 {
     color: #ffffff;
     background-color: #D32023;
     padding:10px;
@@ -17,6 +29,7 @@ h1 {
 .logo {
     vertical-align: middle;
     margin: 10px;
+    width: 200px;
 }
 
 .main {
@@ -24,7 +37,7 @@ h1 {
     margin:auto;
 }
 
-.elements .row {
+.elements .row, .table .row {
     display:table-row;
 }
 
@@ -33,9 +46,11 @@ h1 {
     display:table-cell;
 }
 
-.elements
+.elements, .table
 {
     display:table;
+    margin:auto;
+    border-radius:5px;
 }
 
 .c1 {
@@ -44,6 +59,10 @@ h1 {
 
 .c2 {
     padding-right: 20px;
+}
+
+.cell.col {
+    padding:10px;
 }
 
 .elements select {
@@ -58,4 +77,53 @@ h1 {
 
 .buttons .cell {
     border: 10px solid transparent;
+}
+
+/* error CSS */
+
+.error input {
+    border-width: 2px;
+    border-color: #ac4343;
+    border-bottom: none;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.error .error-message {
+    border: 2px solid #ac4343;
+    border-radius: 0 0 6px 6px;
+    background-color: #ac4343;
+    color: rgb(254,251,251);
+    padding: 10px;
+}
+
+.file-wrapper.error {
+    border-width: 2px;
+    border-color: #ac4343;
+}
+
+.file-wrapper.error .error-message {
+    border-radius: 0;
+}
+
+.error:not(.file-wrapper) {
+    display: flex;
+    display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+    display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -ms-flexbox;      /* TWEENER - IE 10 */
+    display: -webkit-flex;
+    flex-direction: column;
+    -webkit-flex-direction: column;
+}
+
+.error .cs-select {
+    order: -1;
+    -webkit-order: -1;
+}
+
+.error .cs-select.cs-skin-border:not(.cs-active) .cs-placeholder {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    border-color: #ac4343;
+    border-width: 2px;
 }
