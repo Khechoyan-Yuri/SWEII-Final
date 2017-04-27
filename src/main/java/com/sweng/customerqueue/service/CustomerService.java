@@ -9,7 +9,8 @@ import java.util.List;
  */
 public interface CustomerService {
     List<Customer> findAll();
+    List<Customer> findNotHandled();
     Customer findById(Long id);
-    void save(Customer category);
-    void delete(Customer category);
+    void save(Customer customer);
+    void delete(Customer customer);
 }

@@ -38,7 +38,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http
             .authorizeRequests()
-                .anyRequest().hasRole("ADMIN")
+                .antMatchers("/").permitAll()
+                .antMatchers("/admin/**").hasRole("ADMIN")
+                .antMatchers("/admin.html").hasRole("ADMIN")
+                .antMatchers("/edit/**").hasRole("ADMIN")
+                .antMatchers("/edit.html").hasRole("ADMIN")
                 .and()
             .formLogin()
                 .loginPage("/login")
@@ -52,7 +56,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     }
 
     public AuthenticationSuccessHandler loginSuccessHandler() {
-        return (request, response, authentication) -> response.sendRedirect("/");
+        return (request, response, authentication) -> response.sendRedirect("/admin");
     }
 
     public AuthenticationFailureHandler loginFailureHandler() {
@@ -62,19 +66,19 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         };
     }
 
-    @Bean
-    public EvaluationContextExtension securityExtension() {
-        return new EvaluationContextExtensionSupport() {
-            @Override
-            public String getExtensionId() {
-                return "security";
-            }
-
-            @Override
-            public Object getRootObject() {
-                Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-                return new SecurityExpressionRoot(authentication) {};
-            }
-        };
-    }
+//    @Bean
+//    public EvaluationContextExtension securityExtension() {
+//        return new EvaluationContextExtensionSupport() {
+//            @Override
+//            public String getExtensionId() {
+//                return "security";
+//            }
+//
+//            @Override
+//            public Object getRootObject() {
+//                Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+//                return new SecurityExpressionRoot(authentication) {};
+//            }
+//        };
+//    }
 }

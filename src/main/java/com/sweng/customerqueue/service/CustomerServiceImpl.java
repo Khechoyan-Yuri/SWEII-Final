@@ -23,14 +23,15 @@ public class CustomerServiceImpl implements CustomerService {
     }
 
     @Override
+    public List<Customer> findNotHandled() { return customerDao.findNotHandled(); }
+
+    @Override
     public Customer findById(Long id) {
         return customerDao.findById(id);
     }
 
     @Override
-    public void save(Customer customer) {
-        customerDao.save(customer);
-    }
+    public void save(Customer customer) { customerDao.save(customer); }
 
     @Override
     public void delete(Customer customer) {

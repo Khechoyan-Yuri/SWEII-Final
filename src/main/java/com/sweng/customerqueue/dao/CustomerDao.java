@@ -10,6 +10,7 @@ import java.util.List;
  */
 public interface CustomerDao {
     List<Customer> findAll();
+    List<Customer> findNotHandled();
     Customer findById(Long id);
     void save(Customer category);
     void delete(Customer category);

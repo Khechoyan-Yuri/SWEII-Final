@@ -5,13 +5,42 @@ body {
     margin:0;
 }
 
+.heading-nav {
+    white-space:nowrap;
+    margin-left:auto;
+    padding-right: 10px;
+    margin-bottom: auto;
+}
+
+.heading-nav * {
+    color:white;
+    text-decoration:none;
+    display: inline;
+    background-color:transparent;
+    border:none;
+    font-size: medium;
+    font-family:'Palanquin', sans-serif;
+    padding:0px;
+}
+
+.login-image {
+    margin:auto;
+    margin-top:40px;
+}
+
 .table .row:nth-child(even) {
-    background-color: white;
+    background-color: rgba(211, 32, 35,.2);
 }
 
 .table .row:nth-child(odd) {
     background-color: #D32023;
     color:white;
+}
+
+.table
+{
+    border-radius:5px;
+    border-collapse:separate;
 }
 
 .heading {
@@ -32,9 +61,18 @@ body {
     width: 200px;
 }
 
+.container {
+    margin:10px;
+}
+
 .main {
     max-width: 700px;
     margin:auto;
+}
+
+.table-title
+{
+    column-span: all;
 }
 
 .elements .row, .table .row {
@@ -44,6 +82,7 @@ body {
 .cell
 {
     display:table-cell;
+    font-weight:bold;
 }
 
 .elements, .table
@@ -51,6 +90,7 @@ body {
     display:table;
     margin:auto;
     border-radius:5px;
+    float:left;
 }
 
 .c1 {
@@ -69,6 +109,24 @@ body {
     width:100%;
 }
 
+.edit-icon {
+    height:20px;
+    width:20px;
+}
+
+.register-button {
+        text-decoration:none;
+        padding:5px;
+        font-weight:bold;
+        background-color:#D32023;
+        border-radius:5px;
+        border:none;
+        color:white;
+        font-size: medium;
+        font-family:'Palanquin', sans-serif;
+        padding:5px;
+}
+
 .buttons {
     margin:auto;
     margin-top:40px;
@@ -77,6 +135,23 @@ body {
 
 .buttons .cell {
     border: 10px solid transparent;
+}
+
+.pagelinks.button {
+    text-decoration:none;
+    padding:5px;
+    font-weight:bold;
+    background-color:#D32023;
+    border-radius:5px;
+    color:white;
+}
+
+.handle-button {
+    margin-right:20px;
+}
+
+.register-button {
+    margin-right:20px;
 }
 
 /* error CSS */
