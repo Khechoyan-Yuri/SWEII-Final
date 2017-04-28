@@ -5,7 +5,6 @@ import com.sweng.customerqueue.service.CustomerService;
 import com.sweng.customerqueue.web.FlashMessage;
 import com.sweng.customerqueue.web.Reason;
 import com.sweng.customerqueue.service.SmsMessage;
-import org.joda.time.DateTime;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -46,7 +45,7 @@ public class CustomerController {
         if(checkedOutCustomers.size() > 0) {
 
             // Get total wait time of last 10 customers who checked out
-            // (or list size, if list size is less than 10)
+            // (or, instead of 10) list size, if list size is less than 10)
             for (Customer cust : checkedOutCustomers
                     .subList(0, 9 > checkedOutCustomers.size() - 1 ? checkedOutCustomers.size() - 1 : 9)) {
                 waittime += cust.getCheckOutTime().getTime() - cust.getCheckInTime().getTime();
@@ -73,7 +72,7 @@ public class CustomerController {
         model.addAttribute("action", "/add");
         model.addAttribute("purpose", "register");
         System.out.println("In /customer");
-        return "/customer";
+        return "customer";
     }
 
     @RequestMapping(value="/add",method = RequestMethod.POST)
@@ -144,18 +143,18 @@ public class CustomerController {
                 .filter(p -> !(p.getCheckInTime().before(java.sql.Date
                         .valueOf(LocalDate.now())))).collect(Collectors.toList());
         model.addAttribute("customers", customers);
-        model.addAttribute("purpose","edit");
 
         return "admin";
     }
 
-    @RequestMapping("/edit/{customerId}")
+    @RequestMapping(value="/edit/{customerId}")
     public String editCustomer(@PathVariable Long customerId, Model model)
     {
         Customer customer = customerService.findById(customerId);
 
         model.addAttribute("customer", customer);
         model.addAttribute("purpose","edit");
+        model.addAttribute("action","/add");
 
         return "customer";
     }
@@ -163,6 +162,7 @@ public class CustomerController {
     @RequestMapping("/handle")
     public String handleCustomer(Model model)
     {
+
         List<Customer> customers = customerService.findNotHandled();
         if(customers.size()>0)
         {
@@ -188,7 +188,7 @@ public class CustomerController {
                             + "Thank you for being patient with us!\n\n"
                             + "Customer Queue";
 
-                    //smsMessage.sendSms(customer, message);
+                    // smsMessage.sendSms(customer, message);
                 }
                 else if ((i >= 1 && i <= 4) || i == 9) {
                     customer = customers.get(i);
@@ -198,7 +198,7 @@ public class CustomerController {
                             + "Thank you for being patient with us!\n\n"
                             + "Customer Queue";
 
-                    //smsMessage.sendSms(customer, message);
+                    // smsMessage.sendSms(customer, message);
                 }
             }
             // Remove oldest customer
