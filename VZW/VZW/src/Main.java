@@ -198,8 +198,8 @@ public class Main extends Application {
 
     //Set-up: accessing the Twilio account that will be used
     //Find your Account SID and Token at twilio.com/user/account
-    private static final String ACCOUNT_SID = "AC7a7d1ed9a100ade543119a10d80abd3e";
-    private static final String AUTH_TOKEN = "d8c81a50e63739c49c253f8e0f560aeb";
+    private static final String ACCOUNT_SID = "AC25715ec0e85d62fdaf2f3f5d176f4f5a";
+    private static final String AUTH_TOKEN = "d711dc1eb4af9bf60e514ae231be8bfd";
 
     //Create ArrayList for Customers
     ArrayList<Customer> CustomerList = new ArrayList<Customer>();
@@ -452,7 +452,7 @@ public class Main extends Application {
                 //Create message for the user - sent to their mobile numbers' (unformatted)
                 Message message = Message.creator(new PhoneNumber("+1" + userPhNumber.getText()),
                         //Number from Twilio - from number (unformatted)
-                        new PhoneNumber("+13148992125"),
+                        new PhoneNumber("+13146268325"),
                         "Thank you for registering with Verizon Wireless, " + userFName.getText() + "! You are "
                                 + "currently (" + (position) + ")" + " in line. When you reach position (1) in line, "
                                 + "please wait for your name to be called. "
@@ -773,7 +773,7 @@ public class Main extends Application {
                         Message posInLine0 = Message.creator(new PhoneNumber("+1" + CustomerList.get(place).mobileNumber),
 
                         //Number from Twilio - from number (unformatted)
-                        new PhoneNumber("+13148992125"),
+                        new PhoneNumber("+13146268325"),
                         CustomerList.get(place).firstname + ", you are now (" + (place+1)
                              + ") in line for assistance. Please wait for your name to be called. "
                              +"Thank You.\n\n -Verizon Wireless").create();
@@ -784,7 +784,7 @@ public class Main extends Application {
                         //Sends SMS message to 2nd customer in line after deletion is complete
                          Message posInLine1 = Message.creator(new PhoneNumber("+1" + CustomerList.get(place).mobileNumber),
                         //Number from Twilio - from number (unformatted)
-                        new PhoneNumber("+13148992125"),
+                        new PhoneNumber("+13146268325"),
                         CustomerList.get(place).firstname + ", you are now (" + (place+1)
                            + ") in line for assistance. Please be patient with us. "
                            +"Thank You.\n\n -Verizon Wireless").create();
@@ -795,7 +795,7 @@ public class Main extends Application {
                          //Sends SMS message to 3rd customer in line after deletion is complete
                         Message posInLine2 = Message.creator(new PhoneNumber("+1" + CustomerList.get(place).mobileNumber),
                         //Number from Twilio - from number (unformatted)
-                        new PhoneNumber("+13148992125"),
+                        new PhoneNumber("+13146268325"),
                         CustomerList.get(place).firstname + ", you are now (" + (place+1)
                             + ") in line for assistance. Please be patient with us. "
                             +"Thank You.\n\n -Verizon Wireless").create();
@@ -806,7 +806,7 @@ public class Main extends Application {
                             //Sends SMS message to 4th customer in line after deletion is complete
                         Message posInLine3 = Message.creator(new PhoneNumber("+1" + CustomerList.get(place).mobileNumber),
                         //Number from Twilio - from number (unformatted)
-                        new PhoneNumber("+13148992125"),
+                        new PhoneNumber("+13146268325"),
                         CustomerList.get(place).firstname + ", you are now (" + (place+1)
                         + ") in line for assistance. Please be patient with us. "
                         +"Thank You.\n\n -Verizon Wireless").create();
@@ -817,7 +817,7 @@ public class Main extends Application {
                          //Sends SMS message to 5th customer in line after deletion is complete
                          Message posInLine4 = Message.creator(new PhoneNumber("+1" + CustomerList.get(place).mobileNumber),
                         //Number from Twilio - from number (unformatted)
-                        new PhoneNumber("+13148992125"),
+                        new PhoneNumber("+13146268325"),
                         CustomerList.get(place).firstname + ", you are now (" + (place+1)
                            + ") in line for assistance. Please be patient with us. "
                            +"Thank You.\n\n -Verizon Wireless").create();
@@ -828,7 +828,7 @@ public class Main extends Application {
                         //Sends SMS message to 10th customer in line after deletion is complete
                         Message posInLine9 = Message.creator(new PhoneNumber("+1" + CustomerList.get(place).mobileNumber),
                         //Number from Twilio - from number (unformatted)
-                        new PhoneNumber("+13148992125"),
+                        new PhoneNumber("+13146268325"),
                         CustomerList.get(place).firstname + ", you are now (" + (place+1)
                             + ") in line for assistance. Please be patient with us. "
                             +"Thank You.\n\n -Verizon Wireless").create();
