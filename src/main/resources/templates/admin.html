@@ -6,13 +6,13 @@
     <div class="container">
         <div class="main">
             <h2>Customer Service Queue Administration Page</h2>
-            <div class="table">
+            <div class="table queue">
                 <div class="row">
                     <div class="cell col table-title">
-                        Customers Currently in the Queue
+                        <span>Customers Currently in the Queue</span>
                     </div>
-                    <div class="cell col"></div>
-                    <div class="cell col"></div>
+                    <div class="cell col">Check-in Time</div>
+                    <div class="cell col">Check-out Time</div>
                 </div>
                 <div class="row" th:each="customer : ${customers}">
                     <div class="cell col">
